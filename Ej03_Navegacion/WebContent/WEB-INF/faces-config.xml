@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+
+	<managed-bean>
+		<managed-bean-name>listaClientes</managed-bean-name>
+		<managed-bean-class>java.util.ArrayList</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>	
+	
+	<navigation-rule>
+		<display-name>clientes</display-name>
+		<from-view-id>/formularioClientes.jsp</from-view-id>
+		<!-- Esta regla de navegación ya está resuelta en la propia página:
+		<navigation-case>
+			<from-outcome>listadoClientes</from-outcome>
+			<to-view-id>listadoClientes</to-view-id>
+		</navigation-case>-->
+		<navigation-case>
+			<from-outcome>otraPagina</from-outcome>
+			<to-view-id>/otraPagina.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>listado</display-name>
+		<from-view-id>/listadoClientes.jsp</from-view-id>
+		<!-- Esta regla de navegación ya está resuelta en la propia página:
+		<navigation-case>
+			<from-outcome>listadoClientes</from-outcome>
+			<to-view-id>listadoClientes</to-view-id>
+		</navigation-case>-->
+	</navigation-rule>
+	
+	<!-- Se puede usar el comodín en from-view-id -->
+	<navigation-rule>
+		<display-name>logout</display-name>
+		<from-view-id>/*</from-view-id>
+		<navigation-case>
+			<from-outcome>salir</from-outcome>
+			<to-view-id>login</to-view-id>
+		</navigation-case>
+		<!-- otros navigation case... -->
+	</navigation-rule>
+	
+</faces-config>

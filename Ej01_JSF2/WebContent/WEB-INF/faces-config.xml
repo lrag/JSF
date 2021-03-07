@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+
+	<application>
+		
+	</application>
+
+	<!-- 
+	<managed-bean>
+		<managed-bean-name>cliente</managed-bean-name>
+		<managed-bean-class>com.curso.modelo.Cliente</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>clientesBB</managed-bean-name>
+		<managed-bean-class>com.curso.bbean.ClientesBB</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<!- - Para la inyeccion debemos tener un método setCliente en ClientesBB - ->
+		<managed-property>
+			<property-name>cliente</property-name>
+			<property-class>com.curso.modelo.Cliente</property-class>
+			<value>#{cliente}</value>
+		</managed-property>
+	</managed-bean>
+	-->
+
+	<managed-bean>
+		<managed-bean-name>listaClientes</managed-bean-name>
+		<managed-bean-class>java.util.ArrayList</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>	
+
+</faces-config>

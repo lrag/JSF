@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:componentes="http://java.sun.com/jsf/composite/componentes">
+
+	<!-- ui:decorate usa una plantilla en medio de una pagina 
+	<ui:decorate template="/otraPlantilla">
+		<ui:define name="izquierda"></ui:define>
+		<ui:define name="izquierda"></ui:define>
+	</ui:decorate>
+	-->
+	
+	
+	<!-- ui:composition usa una plantilla 'a pantalla completa' -->
+	<h1>ESTO NO APARECE PORQUE ESTAMOS UTILIZANDO UI:COMPOSITION</h1>
+	<ui:composition template="/WEB-INF/plantillas/plantillaDosColumnas.xhtml">
+	
+		<ui:define name="cabecera">
+			<ui:include src="/WEB-INF/plantillas/cabecera.xhtml"/>
+		</ui:define>
+	
+		<ui:define name="menu">
+			<ui:include src="/WEB-INF/plantillas/menu.xhtml"/>
+		</ui:define>
+
+		<ui:define name="principal">
+
+			<h:form>
+
+				<div class="text-center mt-4 mb-4">
+					<h:commandButton value="Insertar"  class="btn btn-primary mr-2"/>
+					<h:commandButton value="Modificar" class="btn btn-primary mr-2"/>
+					<h:commandButton value="Borrar"    class="btn btn-primary mr-2"/>
+					<h:commandButton value="Vaciar"    class="btn btn-primary m2-2"/>
+				</div>
+				
+				<div class="row">
+					<componentes:campo id="marca"  texto="Título" valor="#{vehiculo.marca}"/>
+					<componentes:campo id="modelo" texto="Autor"  valor="#{vehiculo.modelo}"/>
+					<componentes:campo id="color"  texto="ISBN"   valor="#{vehiculo.color}"/>
+				</div>
+				
+			</h:form>
+
+		</ui:define>
+
+		<ui:define name="pie">
+			<ui:include src="/WEB-INF/plantillas/pie.xhtml"/>
+		</ui:define>
+
+	</ui:composition>  
+      
+</html>

@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<head>
+
+</head>
+
+<body>
+
+	<h:form>
+	
+		<table align="center" border="1">
+			<tr>
+				<td>Login</td>
+				<td>
+					<h:inputText value="#{usuario.login}"/>
+				</td>			
+			</tr>
+			<tr>
+				<td>Pw</td>
+				<td>
+					<h:inputText value="#{usuario.pw}"/>
+				</td>			
+			</tr>
+			<tr>
+				<td colspan="2" align="left">
+					<h:commandButton value="Entrar" action="#{controlAccesoBB.login}"/>
+				</td>			
+			</tr>
+		</table>
+	
+	
+	
+	</h:form>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+@CHARSET "ISO-8859-1";
+
+th {
+	background-color: lightGreen;
+	color: white;
+}
+
+table {
+	width: 650px;
+	border: 1px;
+	border-style: solid;
+	border-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+.contenedor {
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cabecera {
+	width: 100%;
+	height: 40px;
+	background-color: buttonface;
+	border-bottom: 2px;
+	border-bottom-color: orange;
+	border-bottom-style: solid;
+}
+
+.menu {
+	width: 20%;
+	/*padding: 10px;*/
+	background-color: lightGreen;
+	height: 300px;
+	float: left;
+}
+
+.principal {
+	text-align: center;
+	border: 0px;
+	border-left: 170px;
+	border-color: lightGreen;
+	border-style: solid;
+}
+
+.pie {
+	font-size: 10px;
+	clear: both;
+	width: 100%;
+	height: 30px;
+	background-color: #F0F0F0;
+	border-top: 2px;
+	border-top-color: orange;
+	border-top-style: solid;
+}
+
+.fila {
+	background-color: white;
+}
+
+.filaSel {
+	background-color: yellow;
+}
+
+.errorGrave {
+	color: red;
+	font-size: 25pt;
+	margin-left: auto;
+	margin-right: auto;	
+	text-align: center;
+}
+
+.total {
+	background-color: orange;
+	font-weight: bold;
+}
+
+.opMenu {
+	margin-left: 10px;	
+}
+
+.par{}
+.impar{
+	background-color: #DDDDDD;
+	}
+
+
+
+

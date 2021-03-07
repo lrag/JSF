@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<ui:composition template="/WEB-INF/plantillas/plantillaDosColumnas.xhtml">
+
+	<ui:define name="principal">
+	
+		<h2 align="center">
+			Mantenimiento de grupos
+		</h2>
+	
+		<h:form id="formulario">
+		
+			<p align="center">
+				<h:commandButton value="Vaciar" action="#{discosBB.vaciar}"/>			
+				<h:commandButton value="Insertar" action="#{discosBB.insertarDisco}" disabled="#{disco.idDisco!=0}"/>			
+				<h:commandButton value="Modificar" action="#{discosBB.modificarDisco}" disabled="#{disco.idDisco==0}"/>			
+				<h:commandButton value="Borrar" action="#{discosBB.borrarDisco}" disabled="#{disco.idDisco==0}"/>			
+			</p>
+
+			<p align="center"> <!-- state of the art -->
+				<h:inputHidden value="#{disco.idDisco}"/>
+				<h:panelGrid columns="3">
+					
+					<h:outputLabel for="titulo" value="Título"/>
+					<h:inputText id="titulo" value="#{disco.titulo}"/>
+					<h:message for="titulo"/>
+	
+					<h:outputLabel for="fecha" value="Fecha"/>
+					<h:inputText id="fecha" value="#{disco.fecha}">
+						<f:convertDateTime pattern="dd/MM/yyyy"/>
+					</h:inputText>
+					<h:message for="fecha"/>
+	
+					<h:outputLabel for="grupo" value="Grupo"/>
+					
+					<h:selectOneMenu value="#{disco.grupo.idGrupo}">
+						<f:selectItems value="#{gruposBB.listaGruposSI}"/>
+					</h:selectOneMenu>
+
+					<h:message for="grupo"/>
+				
+				</h:panelGrid>		
+			</p>		
+
+			<table>
+				<tr>
+					<th>Titulo</th>
+					<th>Fecha</th>
+					<th>Grupo</th>				
+				</tr>		
+				<ui:repeat value="#{discosBB.listaDiscos}" var="d">
+					<tr >
+						<td>
+							<h:commandLink action="#{discosBB.seleccionarDisco(d.idDisco)}" value="#{d.titulo}"/>
+						</td>
+						<td>#{d.fecha}</td>
+						<td>#{d.grupo.nombre}</td>
+					</tr>				
+				</ui:repeat>
+			</table>
+	
+		</h:form>	
+
+	</ui:define>
+	
+</ui:composition>
+
+</html>

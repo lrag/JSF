@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	<h:head>
+		<title>JSF Validación</title>
+		<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	</h:head>
+	
+	<h:body>
+	
+		<div class="text-center page-header">	
+			<h2>Listado de clientes (Validación JSR303)</h2>
+		</div>
+		
+		<hr class="mt-4 mb-4"/>
+	
+		<h:form class="text-center">
+			<!-- 
+			Busca una regla de navegaci�n con el nombre 'formularioClientes'
+			Si no existe, le concatena la extensi�n y busca un fichero con el nombre 
+			No sirve para navegar a html...
+			-->
+			<h:commandLink action="formularioClientesJSR303" value="Nuevo cliente"/>			
+		</h:form>	
+	
+		<div class="row">
+
+			<h:dataTable value="#{listaClientesJSR303}" class="col-sm-12 offset-sm-0 col-md-8 offset-md-2 table table-hover table-striped" var="c">
+			
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nombre"/>
+					</f:facet>
+					<h:outputText value="#{c.nombre}"/>
+				</h:column>
+							
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Dirección"/>
+					</f:facet>
+					<h:outputText value="#{c.direccion}"/>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Teléfono"/>
+					</f:facet>
+					<h:outputText value="#{c.telefono}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Cuenta"/>
+					</f:facet>
+					<h:outputText value="#{c.cuentaBancaria}"/>
+				</h:column>		
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Fecha alta"/>
+					</f:facet>
+					<h:outputText value="#{c.fechaAlta}">
+						<f:convertDateTime pattern="dd/MM/yyyy"/>
+					</h:outputText>
+				</h:column>		
+			
+			</h:dataTable>	
+			
+		</div>
+	
+	</h:body>
+
+</html>

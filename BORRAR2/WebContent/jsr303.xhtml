@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+
+<head>
+</head>
+
+<body>
+
+	HOLA!!
+
+á
+
+	<h2>Ejemplo JSF 2</h2>
+
+
+
+		<form jsfc="h:form" id="formulario">
+		
+			<h:panelGrid columns="3">
+							
+					<h:outputLabel for="nombre" value="Nombre"/>
+					<input type="text" jsfc="h:inputText" id="nombre" value="#{cliente.nombre}" binding="#{clientesBB.cajaNombre}">
+						
+					</input>
+					<h:message for="nombre"/>
+						
+					<h:outputLabel for="direccion" value="Dirección"/>
+					<h:inputText id="direccion" value="#{cliente.direccion}">
+					</h:inputText>
+					<h:message for="direccion"/>
+					
+					<h:outputLabel for="telefono" value="Teléfono"/>
+					<h:inputText id="telefono" value="#{cliente.telefono}">
+					</h:inputText>
+					<h:message for="telefono"/>
+					
+			</h:panelGrid>
+		
+			<h:panelGroup>
+				<h:commandButton value="Insertar" action="#{clientesBB.insertarCliente}"/>
+				<h:commandButton value="Vaciar" action="#{clientesBB.vaciar}" immediate="true"/>
+			</h:panelGroup>
+
+<ui:repeat var="c" value="#{listaClientes}">
+#{c.nombre}<br/>
+</ui:repeat>
+
+		
+		</form>
+
+
+	
+
+</body>      
+      
+</html>

@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<f:view locale="#{usuario.idioma}">
+
+<head>
+
+</head>
+
+<body>
+
+
+	<marquee>
+		<h1>
+			<font color="green">
+				i18n pagina
+			</font>
+		</h1>
+	</marquee>
+
+	<h:form id="formulario">
+	
+		<h:panelGrid columns="3">
+
+			<h:outputLabel for="nombre" value="#{msg.persona_nombre}"/>
+			<h:inputText id="nombre" value="#{persona.nombre}"/>
+			<h:message for="nombre"/>
+			
+			<h:outputLabel for="direccion" value="#{msg.persona_direccion}"/>
+			<h:inputText id="direccion" value="#{persona.direccion}"/>
+			<h:message for="direccion"/>
+			
+			<h:outputLabel for="telefono" value="#{msg.persona_telefono}"/>
+			<h:inputText id="telefono" value="#{persona.telefono}"/>
+			<h:message for="telefono"/>
+
+		</h:panelGrid>
+
+	
+		<h:messages/>
+
+		<h:commandButton value="#{msg.btn_insertar}" action="#{personasBB.insertar}"/>
+		<h:commandLink value="Otra página" action="pagina_2" />
+		
+		<p/>
+		
+		<h:commandButton action="#{idiomaBB.cambiarIdioma('es')}" value="ES"/>
+		<h:commandButton action="#{idiomaBB.cambiarIdioma('en')}" value="EN"/>
+	
+	</h:form>
+
+
+</body>
+      
+</f:view>
+
+</html>
+
+
+
+

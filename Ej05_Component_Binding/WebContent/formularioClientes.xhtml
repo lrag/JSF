@@ -1,0 +1,114 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:head>
+		<title>JSF Validación</title>
+		<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	</h:head>
+	
+	<h:body>
+
+		<div class="text-center page-header">
+			<h2>Formulario de clientes (Component binding)</h2>
+		</div>
+		
+		<hr class="mt-4 mb-4"/>
+
+		<h:form id="formulario">
+		
+			<div class="text-center">
+				<h:commandButton value="Insertar"    class="btn btn-primary mr-2" action="#{clientesBB.insertarCliente}" />
+				<h:commandButton value="Vaciar"      class="btn btn-primary mr-2" action="#{clientesBB.vaciarCliente}"/>
+				<h:commandButton value="Otra Pagina" class="btn btn-primary"      action="otraPagina" immediate="true"/>
+			</div>	
+			
+			<div class="row">		
+		
+		        <div class="row col-sm-12 offset-sm-0 col-md-8 offset-md-2">
+		            <div class="col-2 mt-1">
+						<h:outputLabel for="nombre" value="Nombre" />
+		            </div>
+		            <div class="col-10 mt-1">
+						<h:inputText id="nombre" class="form-control" value="#{cliente.nombre}"/>
+						<h:message for="nombre"/>
+		            </div>		            
+		            <div class="col-2 mt-1">
+						<h:outputLabel for="direccion" value="Dirección" />
+		            </div>
+		            <div class="col-10 mt-1">
+						<h:inputText id="direccion" class="form-control" value="#{cliente.direccion}"/>						
+						<h:message for="direccion"/>
+		            </div>             
+		            <div class="col-2 mt-1">
+						<h:outputLabel for="telefono" value="Teléfono" />
+		            </div>
+		            <div class="col-10 mt-1">
+						<h:inputText id="telefono" class="form-control" value="#{cliente.telefono}"/>
+						<h:message for="telefono"/>		            
+		            </div>
+
+		            <div class="col-2 mt-1">
+						<h:outputLabel for="cuentaBancaria" value="Cuenta Bancaria" />
+		            </div>
+		            <div class="col-10 mt-1">
+						<h:inputText id="cuentaBancaria" class="form-control" value="#{cliente.cuentaBancaria}">
+							<f:converter converterId="conversorCuentaBancaria"/>
+							<f:validator validatorId="validadorCuentaBancaria"/>
+						</h:inputText>
+						<h:message for="cuentaBancaria" id="mensajeCuentaBancaria"/>	            
+		            </div>		            
+		       </div>    
+			</div>		
+			
+			<hr/>				
+
+			<br/>
+			
+			<div class="text-center">
+				<h:commandButton class="btn btn-primary" actionListener="#{clientesBB.ocultarMostrarPanel}" value="Ocultar" immediate="true"/>
+			</div>
+
+			<br/>
+			
+			<h:panelGroup id="panel" binding="#{clientesBB.panel}">
+
+				<div class="row">		
+			
+			        <div class="row col-sm-12 offset-sm-0 col-md-8 offset-md-2">
+			            <div class="col-2 mt-1">
+							<h:outputLabel for="" value="Uno"/>
+			            </div>
+			            <div class="col-10 mt-1">
+							<h:inputText class="form-control"/>
+			            </div>
+			            <div class="col-2 mt-1">
+							<h:outputLabel for="" value="Dos"/>
+			            </div>
+			            <div class="col-10 mt-1">
+							<h:inputText class="form-control"/>
+			            </div>	
+			            <div class="col-2 mt-1">
+							<h:outputLabel for="" value="Tres"/>
+			            </div>
+			            <div class="col-10 mt-1">
+							<h:inputText class="form-control"/>
+			            </div>	
+			            <div class="col-2 mt-1">
+							<h:outputLabel for="" value="Cuatro"/>
+			            </div>
+			            <div class="col-10 mt-1">
+							<h:inputText class="form-control"/>
+			            </div>			            
+					</div>
+				
+				</div>
+						
+			</h:panelGroup>
+		
+		</h:form>
+
+	</h:body>
+	
+</html>

@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<!-- 
+	Esta ruta está fuera de resources
+	-->
+	<link type="text/css" rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/estilos/estilo.css"/>
+	<h:outputStylesheet library="css" name="bootstrap.min.css" />
+</h:head>
+
+<h:body>
+
+	<ui:insert name="cabecera">
+		<!-- 
+		Podemos colocar aquí un ui:include para que aparezca algo por 
+		defecto y ahorrarnos el ui:define en algunas paginas 
+		-->
+	</ui:insert>
+
+	<ui:insert name="menu"/>
+
+	<div class="row">
+	    <div class="col-sm-12 offset-sm-0 col-md-8 offset-md-2">
+			<ui:insert name="principal"/>
+	    </div>
+	</div>
+
+	<ui:insert name="pie"/>
+
+</h:body>      
+      
+</html>

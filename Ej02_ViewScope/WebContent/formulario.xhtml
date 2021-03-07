@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      
+    <h:head>
+    	<title>JSF</title>
+    </h:head>
+    
+    <h:body>
+
+		<h2>Ejemplo JSF 2</h2>
+
+		<h:form id="formulario">
+		
+			<h:panelGrid columns="2">
+			
+				<h:outputLabel for="nombre" value="Nombre"/>
+				<h:inputText id="nombre" value="#{cliente.nombre}"/>
+				
+				<h:outputLabel for="direccion" value="Dirección"/>
+				<h:inputText id="direccion" value="#{cliente.direccion}"/>
+				
+				<h:outputLabel for="telefono" value="Teléfono"/>
+				<h:inputText id="telefono" value="#{cliente.telefono}"/>
+					
+			</h:panelGrid>
+		
+			<h:panelGroup>
+				<h:commandButton value="Insertar" action="#{clientesBB.insertarCliente}"/>
+				<h:commandButton value="FIN" action="inicio"/>
+			</h:panelGroup>
+		
+		</h:form>
+	
+	</h:body>
+
+
+</html>

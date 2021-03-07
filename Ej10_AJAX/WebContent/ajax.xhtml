@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<head>
+
+</head>
+
+<body>
+
+	<marquee>
+		<h1>
+			<font color="green">
+				Ajax Pino
+			</font>
+		</h1>
+	</marquee>
+
+	<h:form id="formulario">
+	
+		Un botón que ejecuta un método en la bb
+		<h:commandButton action="#{ajaxBB.realizarTarea}" value="Dale" >
+			<f:ajax/>
+		</h:commandButton>
+	
+		<hr/>	
+	
+		Un botón que llama a un método y luego 'repinta' un componente
+		<h:commandButton action="#{ajaxBB.modificarTexto}" value="Dale" >
+			<f:ajax render="texto"/>
+		</h:commandButton>
+		<br/>
+		<h:outputText id="texto" value="#{ajaxBB.dato}"/>	
+			
+		<hr/>
+	
+		Un botón que envía parametros<br/>
+		Palabra	
+		<h:inputText id="palabra" value="#{ajaxBB.palabra}" required="true"/>
+		<h:message id="mensaje" for="palabra"/>
+		<h:commandButton value="Añadir" action="#{ajaxBB.addPalabra}">
+			<!--
+			Hay que indicar en 'execute' que se enviará a las bbeans 
+			@all   : Process all components in view 
+			@none  : Process no components 
+			@this  : Process only this component, the component that triggered the Ajax request (default) 
+			@form  : Process all components within this form (from which Ajax request was fired)
+ 			id’s   : Implicit id’s of components to be processed, space separated (LA QUE ESTAMOS USANDO PRECISAMENTE) 
+			EL     : Must resolve to Collection of Strings
+			-->		
+			<f:ajax execute="palabra" render="tabla mensaje"/>
+		</h:commandButton>
+		
+		<h:dataTable id="tabla" border="1" value="#{ajaxBB.listaPalabras}" var="p">
+			<h:column>
+				<h:outputText value="#{p}" />
+			</h:column>
+		</h:dataTable>	
+		
+		<hr/>
+		Las peticiones AJAX pueden asociarse a componentes no 'command'
+		<h:selectOneMenu value="#{ajaxBB.comunidad}">
+			<f:selectItems value="#{ajaxBB.listaComunidadesSI}"/>
+			<f:ajax render="provincia"/>
+		</h:selectOneMenu>
+		
+		<h:selectOneMenu id="provincia" value="#{ajaxBB.provincia}">
+			<f:selectItems value="#{ajaxBB.listaProvinciasSI}"/>
+		</h:selectOneMenu>		
+
+		<hr/>
+		<script>
+		function vaciarMillas(){
+			alert("AQUI");
+			//document.getElementById("formulario:millasNauticas").innerHTML = "???";
+		}
+		</script>
+		
+		Eventos js<br/> 
+		Kilómetros
+		<h:inputText id="kilometros" value="#{ajaxBB.kilometros}">
+			<f:ajax event="keyup" render="millasNauticas" />
+		</h:inputText>
+		<h:outputText id="millasNauticas" value="#{ajaxBB.millasNauticas}" />
+		
+			
+	
+	</h:form>
+
+</body>
+      
+</html>
+
+
+
+

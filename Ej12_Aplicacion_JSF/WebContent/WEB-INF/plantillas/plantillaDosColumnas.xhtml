@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+
+	<link type="text/css" rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/estilos/estilo.css"/>
+
+</h:head>
+
+<h:body>
+
+	<div class="contenedor">
+	
+		<div class="cabecera">
+			<ui:insert name="cabecera">
+				<!-- Podemos colocar aquí un ui:include para que aparezca algo por 
+				defecto y ahorrarnos el ui:define en algunas paginas -->
+				<ui:include src="/WEB-INF/plantillas/cabecera.xhtml"/>
+			</ui:insert>
+		</div>
+	
+		<div class="menu">
+			<ui:insert name="menu">
+				<ui:include src="/WEB-INF/plantillas/menu.xhtml"/>
+			</ui:insert>
+		</div>
+
+		<div class="principal">
+			<ui:insert name="principal"/>
+		</div>
+
+		<div class="pie">
+			<ui:insert name="pie">
+				<ui:include src="/WEB-INF/plantillas/pie.xhtml"/>
+			</ui:insert>
+		</div>
+	
+	</div>
+
+
+</h:body>      
+      
+</html>

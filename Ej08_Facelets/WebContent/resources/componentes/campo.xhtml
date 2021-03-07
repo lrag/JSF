@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+	<composite:attribute name="texto"/>
+	<composite:attribute name="id"/>
+	<composite:attribute name="valor"/>
+</composite:interface>
+
+<composite:implementation>
+	
+    <div class="col-sm-12 col-md-2 mt-1">
+		<h:outputLabel for="#{cc.attrs.id}" value="#{cc.attrs.texto}" />
+    </div>
+    <div class="col-sm-12 col-md-8 mt-1">
+		<h:inputText id="#{cc.attrs.id}" value="#{cc.attrs.valor}" class="form-control"/>
+    </div>	
+    <div class="col-sm-12 col-md-2 mt-1">
+		<h:message for="#{cc.attrs.id}"/>	
+    </div>
+	
+</composite:implementation>
+
+</html>

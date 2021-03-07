@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<head></head>
+
+<body>
+
+	<form jsfc="h:form" id="formulario">
+	
+	
+		<h:panelGrid columns="3">
+		
+			<f:validateBean disabled="true">
+
+				<h:outputLabel for="idVehiculo" value="ID" />
+				<h:inputText id="idVehiculo" value="#{vehiculo.idVehiculo}"/>
+				<h:message for="idVehiculo"/>
+	
+				<h:outputLabel for="marca" value="Marca" />
+				<h:inputText id="marca" value="#{vehiculo.marca}" />
+				<h:message for="marca"/>
+	
+				<h:outputLabel for="modelo" value="Modelo" />
+				<h:inputText id="modelo" value="#{vehiculo.modelo}" />
+				<h:message for="modelo"/>
+	
+				<h:outputLabel for="potencia" value="Potencia" />
+				<h:inputText id="potencia" value="#{vehiculo.potencia}" />
+				<h:message for="potencia"/>
+	
+				<h:outputLabel for="fechaAlta" value="Fecha alta" />
+				<h:inputText id="fechaAlta" value="#{vehiculo.fechaAlta}">
+					<f:convertDateTime pattern="dd/MM/yyyy"/>
+				</h:inputText>
+				<h:message for="fechaAlta"/>
+		
+			</f:validateBean>
+		
+		</h:panelGrid>
+
+		<input type="submit" jsfc="h:commandButton" value="Vaciar" action="#{vehiculosBB.vaciar}"/>
+		<input type="submit" jsfc="h:commandButton" value="Enviar" action="#{vehiculosBB.insertar}"/>
+	
+	</form>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<script type="text/javascript">
+
+var xmlHttp = null;
+
+function getXmlHttp()
+{
+	//Firefox e IE7
+	if(typeof XMLHttpRequest!="undefined"){
+		return new XMLHttpRequest;
+	}
+	//IE < 7
+	else if(window.ActiveXObject){ 
+
+		var versiones = new Array();
+		versiones[0] = "MSXML2.XmlHttp.5.0";
+		versiones[1] = "MSXML2.XmlHttp.4.0";
+		versiones[2] = "MSXML2.XmlHttp.3.0";
+		versiones[3] = "MSXML2.XmlHttp.2.0";
+		versiones[4] = "Microsoft.XmlHttp";
+		for(var a=0; a<versiones.length; a++){
+			try{
+				return new ActiveXObject(versiones[a]);
+			}
+			catch(EX){
+				alert(versiones[a]+" no soportado");
+			}
+		}
+	}
+}
+
+function enviarConsulta(){
+	
+	var codigo = document.getElementById("codigo").value;
+
+	if(xmlHttp == null){
+		xmlHttp = getXmlHttp();
+	}
+	xmlHttp.open("get","SVBusquedas?codigo="+codigo,true);
+	xmlHttp.onreadystatechange = function () {
+			if(xmlHttp.readyState == 4){
+				var respuesta = xmlHttp.responseText;
+				mostrarResultado(respuesta);	
+			}
+		}	
+	xmlHttp.send(null);
+}
+
+function mostrarResultado(respuesta){
+	document.getElementById("nombrePersona").innerHTML = respuesta;
+}
+
+</script>
+
+<body>
+
+	Fecha
+	<input type="text" id="tal"/><br/>
+	
+	Código	
+	<input type="text" id="codigo"/>
+	<input type="button" value="Buscar" onclick="enviarConsulta()"/>
+	<span id="nombrePersona"></span><br/>	
+	
+	Teléfono
+	<input type="text" id="pascual"/>
+</body>
+</html>
