@@ -5,7 +5,7 @@ import javax.faces.bean.RequestScoped;
 
 import com.curso.modelo.Libro;
 
-@ManagedBean
+@ManagedBean(name="librosBB")
 @RequestScoped
 public class LibrosBB {
 

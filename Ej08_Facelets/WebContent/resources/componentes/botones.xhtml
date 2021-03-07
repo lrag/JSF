@@ -5,17 +5,17 @@
       xmlns:composite="http://java.sun.com/jsf/composite">
 
 <composite:interface>
-	<composite:attribute name="bbean"/>
+	<composite:actionSource name="accionInsertar"/>
 </composite:interface>
 
 <composite:implementation>
 	
 	<div class="text-center mt-4 mb-4">
-		<h:commandButton value="Insertar"  class="btn btn-primary mr-2" action="#{cc.attrs.bbean}.insertar"/>
-		<!-- 
+		<h:commandButton value="Insertar"  class="btn btn-primary mr-2" action="#{cc.attrs.accionInsertar}"/>
 		<h:commandButton value="Modificar" class="btn btn-primary mr-2" action="#{cc.attrs.bbean.modificar}"/>
 		<h:commandButton value="Borrar"    class="btn btn-primary mr-2" action="#{cc.attrs.bbean.borrar}"/>
 		<h:commandButton value="Vaciar"    class="btn btn-primary m2-2" action="#{cc.attrs.bbean.vaciar}"/>
+		<!-- 
 		-->
 	</div>	
 	

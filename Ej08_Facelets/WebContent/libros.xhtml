@@ -28,21 +28,21 @@
 
 			<h:form id="formulario">
 
-				<!-- 
 				<div class="text-center mt-4 mb-4">
 					<h:commandButton value="Insertar"  class="btn btn-primary mr-2" action="#{librosBB.insertar}"/>
 					<h:commandButton value="Modificar" class="btn btn-primary mr-2"/>
 					<h:commandButton value="Borrar"    class="btn btn-primary mr-2"/>
 					<h:commandButton value="Vaciar"    class="btn btn-primary m2-2"/>
 				</div>
+				
+				<!-- 
+				componentes:botones accionInsertar="#librosBB.insertar}"/>				
 				-->
 				
-				<componentes:botones bbean="#{librosBB}"/>				
-				
 				<div class="row">
-					<componentes:campo id="titulo"  texto="Título" valor="#{librosBB.libro.titulo}"/>
-					<componentes:campo id="autor"   texto="Autor"  valor="#{librosBB.libro.autor}"/>
-					<componentes:campo id="ISBN"    texto="ISBN"   valor="#{librosBB.libro.ISBN}"/>
+					<componentes:campo id="titulo" texto="Título" valor="#{librosBB.libro.titulo}"/>
+					<componentes:campo id="autor"  texto="Autor"  valor="#{librosBB.libro.autor}"/>
+					<componentes:campo id="ISBN"   texto="ISBN"   valor="#{librosBB.libro.ISBN}"/>
 				</div>
 				
 			</h:form>
