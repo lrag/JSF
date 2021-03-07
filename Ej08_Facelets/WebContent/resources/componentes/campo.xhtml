@@ -13,13 +13,13 @@
 <composite:implementation>
 	
     <div class="col-sm-12 col-md-2 mt-1">
-		<h:outputLabel for="#{cc.attrs.id}" value="#{cc.attrs.texto}" />
+        <h:outputLabel for="input" value="#{cc.attrs.texto}" />
     </div>
     <div class="col-sm-12 col-md-8 mt-1">
-		<h:inputText id="#{cc.attrs.id}" value="#{cc.attrs.valor}" class="form-control"/>
+		<h:inputText id="input" value="#{cc.attrs.valor}" class="form-control"/>
     </div>	
     <div class="col-sm-12 col-md-2 mt-1">
-		<h:message for="#{cc.attrs.id}"/>	
+		<h:message id="mensaje" for="input"/>	
     </div>
 	
 </composite:implementation>

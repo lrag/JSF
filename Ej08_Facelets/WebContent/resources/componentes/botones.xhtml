@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"   
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+	<composite:attribute name="bbean"/>
+</composite:interface>
+
+<composite:implementation>
+	
+	<div class="text-center mt-4 mb-4">
+		<h:commandButton value="Insertar"  class="btn btn-primary mr-2" action="#{cc.attrs.bbean}.insertar"/>
+		<!-- 
+		<h:commandButton value="Modificar" class="btn btn-primary mr-2" action="#{cc.attrs.bbean.modificar}"/>
+		<h:commandButton value="Borrar"    class="btn btn-primary mr-2" action="#{cc.attrs.bbean.borrar}"/>
+		<h:commandButton value="Vaciar"    class="btn btn-primary m2-2" action="#{cc.attrs.bbean.vaciar}"/>
+		-->
+	</div>	
+	
+</composite:implementation>
+
+</html>
