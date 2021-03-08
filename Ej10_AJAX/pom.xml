@@ -2,8 +2,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>Ej08_Facelets</groupId>
-	<artifactId>Ej08_Facelets</artifactId>
+	<groupId>Ej10_AJAX</groupId>
+	<artifactId>Ej10_AJAX</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<build>
@@ -26,6 +26,7 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 	<dependencies>
 
@@ -60,5 +61,7 @@
 		</dependency>
 
 	</dependencies>
+
+
 
 </project>

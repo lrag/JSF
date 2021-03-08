@@ -13,7 +13,6 @@ public class Usuario {
 
 	public Usuario() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Usuario(int idUsuario, String nombre, String idioma) {

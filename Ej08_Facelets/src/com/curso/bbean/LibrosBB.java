@@ -38,5 +38,10 @@ public class LibrosBB {
 		libro = new Libro();
 		return null;
 	}
+	
+	public String seleccionar(int idLibro) {
+		System.out.println("Seleccionando el libro:"+idLibro);
+		return null;
+	}
 		
 }

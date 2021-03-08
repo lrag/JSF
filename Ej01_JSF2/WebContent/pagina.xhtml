@@ -33,6 +33,31 @@
 			</h:panelGroup>
 		
 		</h:form>
+		
+		<h:dataTable border="1" value="#{listaClientes}" var="c">
+		
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nombre"/>
+				</f:facet>
+				<h:outputText value="#{c.nombre}"/>			
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Dirección"/>
+				</f:facet>
+				<h:outputText value="#{c.direccion}"/>			
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Teléfono"/>
+				</f:facet>
+				<h:outputText value="#{c.telefono}"/>			
+			</h:column>
+		
+		</h:dataTable>
+		
+		
 
 	</h:body>
 
