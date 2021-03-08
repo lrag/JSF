@@ -5,8 +5,8 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-@ManagedBean(name="cliente") //Si no ponemos 'name' toma por defecto el nombre de la clase
-@RequestScoped //Es tontería ponerlo puesto que es el scope por defecto
+//@ManagedBean(name="cliente") //Si no ponemos 'name' toma por defecto el nombre de la clase
+//@RequestScoped //Es tontería ponerlo puesto que es el scope por defecto
 public class Cliente implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -18,6 +18,7 @@ public class Cliente implements Serializable{
 
 	public Cliente() {
 		super();
+		System.out.println("Creando una instancia de Cliente");
 	}
 
 	public Cliente(int idCliente, String nombre, String direccion, long telefono) {
@@ -58,6 +59,12 @@ public class Cliente implements Serializable{
 
 	public void setTelefono(long telefono) {
 		this.telefono = telefono;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono="
+				+ telefono + "]";
 	}
 
 }
