@@ -9,7 +9,7 @@
         
     <h:body>
 
-		<h2>Ejemplo JSF 2</h2>
+		<h2>Ejemplo JSF 2 (Bis)</h2>
 		
 		<hr/>
 
@@ -18,18 +18,18 @@
 			<h:panelGrid columns="2">
 			
 				<h:outputLabel for="nombre" value="Nombre"/>
-				<h:inputText id="nombre" value="#{cliente.nombre}"/>
+				<h:inputText id="nombre" value="#{clientesBB_Bis.cliente.nombre}"/>
 				
 				<h:outputLabel for="direccion" value="Dirección"/>
-				<h:inputText id="direccion" value="#{cliente.direccion}"/>
+				<h:inputText id="direccion" value="#{clientesBB_Bis.cliente.direccion}"/>
 				
 				<h:outputLabel for="telefono" value="Teléfono"/>
-				<h:inputText id="telefono" value="#{cliente.telefono}"/>
+				<h:inputText id="telefono" value="#{clientesBB_Bis.cliente.telefono}"/>
 					
 			</h:panelGrid>
 		
 			<h:panelGroup>
-				<h:commandButton value="Insertar" action="#{clientesBB.insertarCliente}"/>
+				<h:commandButton value="Insertar" action="#{clientesBB_Bis.insertarCliente}"/>
 			</h:panelGroup>
 		
 		</h:form>
@@ -56,6 +56,8 @@
 			</h:column>
 		
 		</h:dataTable>
+		
+		
 
 	</h:body>
 

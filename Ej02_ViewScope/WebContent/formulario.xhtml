@@ -9,7 +9,7 @@
     
     <h:body>
 
-		<h2>Ejemplo JSF 2</h2>
+		<h2>Ejemplo JSF 2 (View scope)</h2>
 
 		<h:form id="formulario">
 		
@@ -32,6 +32,29 @@
 			</h:panelGroup>
 		
 		</h:form>
+		
+		<h:dataTable border="1" value="#{listaClientes}" var="c">
+		
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nombre"/>
+				</f:facet>
+				<h:outputText value="#{c.nombre}"/>			
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Dirección"/>
+				</f:facet>
+				<h:outputText value="#{c.direccion}"/>			
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Teléfono"/>
+				</f:facet>
+				<h:outputText value="#{c.telefono}"/>			
+			</h:column>
+		
+		</h:dataTable>		
 	
 	</h:body>
 

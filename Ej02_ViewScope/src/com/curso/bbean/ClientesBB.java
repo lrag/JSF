@@ -16,15 +16,17 @@ public class ClientesBB implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	//Se inyecta desde 'View scope'
 	@ManagedProperty(value = "#{listaClientes}")
 	private List<Cliente> listaClientes;
+
+	//Se inyecta desde 'request scope'
+	@ManagedProperty(value = "#{cliente}")
+	private Cliente cliente;
 
 	public void setListaClientes(List<Cliente> listaClientes) {
 		this.listaClientes = listaClientes;
 	}
-
-	@ManagedProperty(value = "#{cliente}")
-	private Cliente cliente;
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
@@ -35,6 +37,7 @@ public class ClientesBB implements Serializable {
 		System.out.println("Insertando el cliente:" + cliente.getNombre());
 		listaClientes.add(cliente);
 		System.out.println(listaClientes);
+		//return "formulario.xhtml";
 		return null;
 	}
 

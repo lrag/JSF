@@ -23,37 +23,50 @@
 			Si no existe, le concatena la extensión y busca un fichero con el nombre 
 			No sirve para navegar a html...
 			-->
-			<h:commandLink action="formularioClientes" value="Nuevo cliente"/>			
-		</h:form>	
+			<h:commandButton action="verFormulario" class="btn btn-primary mr-3" value="Nuevo cliente"/>
+			<h:commandButton action="salir"         class="btn btn-primary" value="Salir"/>			
 	
-		<div class="row">
-
-			<h:dataTable value="#{listaClientes}" class="col-sm-12 offset-sm-0 col-md-8 offset-md-2 table table-hover table-striped" var="c">
+			<div class="row">
+	
+				<h:dataTable value="#{listaClientes}" class="col-sm-12 offset-sm-0 col-md-8 offset-md-2 table table-hover table-striped" var="c">
+				
+						<f:facet name="header">
+							<h:outputText value="Listado de clientes"/>
+						</f:facet>			
+						<f:facet name="footer">
+							<h:outputText value="Trololó"/>
+						</f:facet>			
+				
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Nombre"/>
+						</f:facet>
+						<f:facet name="footer">
+							<h:outputText value="YO QUE SE"/>
+						</f:facet>
+						
+						<h:commandLink value="#{c.nombre}" action="#{clientesBB.seleccionarCliente(c.idCliente)}"/>						
+					</h:column>
+								
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Dirección"/>
+						</f:facet>
+						<h:outputText value="#{c.direccion}"/>
+					</h:column>
+	
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Teléfono"/>
+						</f:facet>
+						<h:outputText value="#{c.telefono}"/>
+					</h:column>
+				
+				</h:dataTable>	
+				
+			</div>
 			
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Nombre"/>
-					</f:facet>
-					<h:outputText value="#{c.nombre}"/>
-				</h:column>
-							
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Dirección"/>
-					</f:facet>
-					<h:outputText value="#{c.direccion}"/>
-				</h:column>
-
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Teléfono"/>
-					</f:facet>
-					<h:outputText value="#{c.telefono}"/>
-				</h:column>
-			
-			</h:dataTable>	
-			
-		</div>
+		</h:form>
 	
 	</h:body>
 

@@ -5,6 +5,7 @@
 
 	<h:head>
 		<title>JSF Navecagión</title>
+		<!-- La carpeta 'css' estará en 'resources' -->
 		<h:outputStylesheet library="css" name="bootstrap.min.css" />
 	</h:head>
 	
@@ -19,8 +20,10 @@
 		<h:form id="formulario">
 
 			<div class="text-center">
-				<h:commandButton value="Insertar"    class="btn btn-primary mr-2" action="#{clientesBB.insertarCliente}" />
-				<h:commandButton value="Otra Pagina" class="btn btn-primary"      action="otraPagina" />
+				<h:commandButton value="Insertar" class="btn btn-primary mr-2" action="#{clientesBB.insertarCliente}" />
+				<h:commandButton value="Cancelar" class="btn btn-primary mr-2" action="verListado" />
+				<h:commandButton value="Vaciar"   class="btn btn-primary mr-2" action="#{clientesBB.vaciarFormulario}" />
+				<h:commandButton value="Salir"    class="btn btn-primary"      action="salir" />
 			</div>
 			
 		   <div class="row">        

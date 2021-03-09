@@ -13,36 +13,43 @@
 	</managed-bean>	
 	
 	<navigation-rule>
-		<display-name>clientes</display-name>
-		<from-view-id>/formularioClientes.jsp</from-view-id>
-		<!-- Esta regla de navegación ya está resuelta en la propia página:
+		<display-name>formularioClientes</display-name>
+		<from-view-id>formularioClientes.xhtml</from-view-id>
+		<!-- Esta regla de navegación ya está resuelta en la propia página:-->
 		<navigation-case>
-			<from-outcome>listadoClientes</from-outcome>
-			<to-view-id>listadoClientes</to-view-id>
-		</navigation-case>-->
-		<navigation-case>
-			<from-outcome>otraPagina</from-outcome>
-			<to-view-id>/otraPagina.jsp</to-view-id>
+			<from-outcome>verListado</from-outcome>
+			<to-view-id>listadoClientes.xhtml</to-view-id>
 		</navigation-case>
+		<!-- 
+		<navigation-case>
+			<from-outcome>salir</from-outcome>
+			<to-view-id>login.xhtml</to-view-id>
+		</navigation-case>
+		-->
 	</navigation-rule>
 
 	<navigation-rule>
-		<display-name>listado</display-name>
-		<from-view-id>/listadoClientes.jsp</from-view-id>
-		<!-- Esta regla de navegación ya está resuelta en la propia página:
+		<display-name>listadoClientes</display-name>
+		<from-view-id>listadoClientes.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>listadoClientes</from-outcome>
-			<to-view-id>listadoClientes</to-view-id>
-		</navigation-case>-->
+			<from-outcome>verFormulario</from-outcome>
+			<to-view-id>formularioClientes.xhtml</to-view-id>
+		</navigation-case>
+		<!-- 
+		<navigation-case>
+			<from-outcome>salir</from-outcome>
+			<to-view-id>login.xhtml</to-view-id>
+		</navigation-case>		
+		-->
 	</navigation-rule>
 	
 	<!-- Se puede usar el comodín en from-view-id -->
 	<navigation-rule>
-		<display-name>logout</display-name>
+		<display-name>login</display-name>
 		<from-view-id>/*</from-view-id>
 		<navigation-case>
 			<from-outcome>salir</from-outcome>
-			<to-view-id>login</to-view-id>
+			<to-view-id>login.xhtml</to-view-id>
 		</navigation-case>
 		<!-- otros navigation case... -->
 	</navigation-rule>

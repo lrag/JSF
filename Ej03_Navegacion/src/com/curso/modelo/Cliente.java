@@ -18,10 +18,12 @@ public class Cliente implements Serializable{
 
 	public Cliente() {
 		super();
+		idCliente = (int) Math.round(Math.random()*10_000);
 	}
 
 	public Cliente(int idCliente, String nombre, String direccion, long telefono) {
 		super();
+		idCliente = (int) Math.round(Math.random()*10_000);
 		this.idCliente = idCliente;
 		this.nombre = nombre;
 		this.direccion = direccion;
@@ -58,6 +60,12 @@ public class Cliente implements Serializable{
 
 	public void setTelefono(long telefono) {
 		this.telefono = telefono;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [idCliente=" + idCliente + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono="
+				+ telefono + "]";
 	}
 
 }
