@@ -54,8 +54,7 @@ public class ClientesBB implements Serializable {
 	}
 
 	//
-	public String vaciarCliente() {
-		
+	public String vaciarCliente() {		
 		
 		System.out.println("VACIAR");
 		
@@ -80,11 +79,12 @@ public class ClientesBB implements Serializable {
 		UIViewRoot raiz = fCtx.getViewRoot(); //Pedimos la raíz del arbol
 		//Si un componentente con id está dentro de un contenedor que tambien lo tiene 
 		//el hijo recibe el id del padre con el formato 'idpadre:idhijo'
-		HtmlPanelGroup panel = (HtmlPanelGroup)	raiz.findComponent("formulario:panel");
-		panel.setRendered(!panel.isRendered());
+		//HtmlPanelGroup panel = (HtmlPanelGroup)	raiz.findComponent("formulario:panel");
+		//panel.setRendered(!panel.isRendered());
 				
 		// Fino estilista
-		//panel.setRendered(!panel.isRendered());
+		panel.setRendered(!panel.isRendered());	
+	
 		
 	}
 

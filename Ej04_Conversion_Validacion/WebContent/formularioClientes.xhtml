@@ -59,7 +59,7 @@
 		            </div>
 		            <div class="col-10 mt-1">
 						<h:inputText id="fechaAlta" class="form-control" value="#{cliente.fechaAlta}">
-							<f:convertDateTime pattern="dd/MM/yyyy"/>
+							<f:convertDateTime pattern="#{preferenciasBB.formatoFecha}"/>
 						</h:inputText>
 						<h:message for="fechaAlta"/>		            
 		            </div>
@@ -69,12 +69,19 @@
 		            </div>
 		            <div class="col-10 mt-1">
 						<h:inputText id="cuentaBancaria" class="form-control" value="#{cliente.cuentaBancaria}">
+							<!-- 
 							<f:converter converterId="conversorCuentaBancaria"/>
+							-->
 							<f:validator validatorId="validadorCuentaBancaria"/>
 						</h:inputText>
 						<h:message for="cuentaBancaria" id="mensajeCuentaBancaria"/>	            
 		            </div>
 		            
+		            <div class="col-2 mt-1">
+		            </div>
+		            <div class="col-10 mt-1">
+						<h:messages/>		            
+		            </div>		            
 		       </div>    
 		   </div>	
 		

@@ -19,9 +19,10 @@
 		<h:form id="formulario">
 		
 			<div class="text-center">
-				<h:commandButton value="Insertar"    class="btn btn-primary mr-2" action="#{clientesJSR303BB.insertarCliente}" />
-				<h:commandButton value="Vaciar"      class="btn btn-primary mr-2" action="#{clientesJSR303BB.vaciarCliente}" />
-				<h:commandButton value="Otra Pagina" class="btn btn-primary"      action="otraPagina" immediate="true"/>
+				<h:commandButton value="Insertar"   class="btn btn-primary mr-2" action="#{clientesJSR303BB.insertarCliente}" />
+				<h:commandButton value="Vaciar"     class="btn btn-primary mr-2" action="#{clientesJSR303BB.vaciarCliente}" immediate="true" />
+				<h:commandButton value="Cancelar"   class="btn btn-primary mr-2" action="listadoClientesJSR303"     immediate="true"/>
+				<h:commandButton value="Cancelar 2" class="btn btn-primary"    action="#{clientesJSR303BB.navegar}" immediate="true"/>
 			</div>	
 			
 			<div class="row">        
@@ -65,7 +66,9 @@
 		            </div>
 		            <div class="col-10 mt-1">
 						<h:inputText id="cuentaBancaria" class="form-control" value="#{clienteJSR303.cuentaBancaria}">
+							<!--
 							<f:converter converterId="conversorCuentaBancaria"/>
+							-->
 							<f:validator validatorId="validadorCuentaBancaria"/>
 						</h:inputText>
 						<h:message for="cuentaBancaria" id="mensajeCuentaBancaria"/>	            

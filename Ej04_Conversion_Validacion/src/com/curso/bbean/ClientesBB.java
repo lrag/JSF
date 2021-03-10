@@ -18,13 +18,13 @@ public class ClientesBB implements Serializable {
 
 	@ManagedProperty(value = "#{listaClientes}")
 	private List<Cliente> listaClientes;
+	
+	@ManagedProperty(value = "#{cliente}")
+	private Cliente cliente;
 
 	public void setListaClientes(List<Cliente> listaClientes) {
 		this.listaClientes = listaClientes;
 	}
-
-	@ManagedProperty(value = "#{cliente}")
-	private Cliente cliente;
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;

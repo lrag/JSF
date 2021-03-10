@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:head>
+		<title>JSF Navecagión</title>
+		<!-- La carpeta 'css' estará en 'resources' -->
+		<h:outputStylesheet library="css" name="bootstrap.min.css" />
+	</h:head>
+	
+	<h:body>
+
+		<div class="text-center page-header">
+			<h2>Formulario de clientes</h2>
+		</div>
+		
+		<hr class="mt-4 mb-4"/>
+	
+		<h:form id="formulario">
+
+			<div class="text-center">
+				<h:commandButton value="Insertar" class="btn btn-primary mr-2" action="#{clientesBB.insertarCliente}" />
+				<h:commandButton value="Cancelar" class="btn btn-primary mr-2" action="verListado" />
+				<h:commandButton value="Vaciar"   class="btn btn-primary mr-2" action="#{clientesBB.vaciarFormulario}" />
+				<h:commandButton value="Salir"    class="btn btn-primary"      action="salir" />
+			</div>
+			
+		   <div class="row">        
+		        <div class="row col-sm-12 offset-sm-0 col-md-8 offset-md-2">
+		            <div class="col-2 mt-1">
+						<h:outputLabel for="nombre" value="Nombre" />
+		            </div>
+		            <div class="col-10 mt-1">
+						<h:inputText id="nombre" class="form-control" value="#{cliente.nombre}" />
+		            </div>
+		            
+		            <div class="col-2 mt-1">
+						<h:outputLabel for="direccion" value="Dirección" />
+		            </div>
+		            <div class="col-10 mt-1">
+						<h:inputText id="direccion" class="form-control" value="#{cliente.direccion}" />
+		            </div>                 
+		            
+		            <div class="col-2 mt-1">
+						<h:outputLabel for="telefono" value="Teléfono" />
+		            </div>
+		            <div class="col-10 mt-1">
+						<h:inputText id="telefono" class="form-control" value="#{cliente.telefono}" />
+		            </div>
+		       </div>    
+		   </div>			
+	
+		</h:form>
+
+	</h:body>
+
+</html>

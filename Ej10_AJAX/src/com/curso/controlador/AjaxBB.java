@@ -23,7 +23,7 @@ public class AjaxBB implements Serializable {
 
 	// ///////////////////////////////////////////////////////
 
-	private String dato;
+	private String dato = "CAMBIAME";
 
 	public String getDato() {
 		return dato;
@@ -40,13 +40,12 @@ public class AjaxBB implements Serializable {
 
 	// ///////////////////////////////////////////////////////
 
+	private String palabra;
 	private List<String> listaPalabras = new ArrayList<String>();
 
 	public List<String> getListaPalabras() {
 		return listaPalabras;
 	}
-
-	private String palabra;
 
 	public String getPalabra() {
 		return palabra;
@@ -128,12 +127,13 @@ public class AjaxBB implements Serializable {
 	
 	public double getMillasNauticas(){
 		
+		/*
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		*/
 		
 		System.out.println("GET MILLAS!");
 		return kilometros/1.852;

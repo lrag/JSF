@@ -21,6 +21,7 @@ public class VehiculosBB {
 	}
 
 	public String vaciar(){
+		vehiculo.setIdVehiculo(0);
 		vehiculo.setMarca("");
 		vehiculo.setModelo("");
 		vehiculo.setPotencia(0);

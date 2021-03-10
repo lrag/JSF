@@ -3,11 +3,11 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<head>
+<h:head>
 
-</head>
+</h:head>
 
-<body>
+<h:body>
 
 	<marquee>
 		<h1>
@@ -19,7 +19,7 @@
 
 	<h:form id="formulario">
 	
-		Un botón que ejecuta un método en la bb
+		Un botón que ejecuta un método en la bb 'dispara y olvida'
 		<h:commandButton action="#{ajaxBB.realizarTarea}" value="Dale" >
 			<f:ajax/>
 		</h:commandButton>
@@ -70,6 +70,7 @@
 		</h:selectOneMenu>		
 
 		<hr/>
+		
 		<script>
 		function vaciarMillas(){
 			alert("AQUI");
@@ -88,7 +89,7 @@
 	
 	</h:form>
 
-</body>
+</h:body>
       
 </html>
 

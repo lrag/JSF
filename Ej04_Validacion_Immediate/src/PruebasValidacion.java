@@ -13,7 +13,6 @@ public class PruebasValidacion {
 	public static void main(String[] args) {
 
 		Validator v = Validation.buildDefaultValidatorFactory().getValidator();
-		
 		Vehiculo vh = new Vehiculo(-5,"fkdhfjshds","hjkdhdebdbd",50,new Date(1));
 		
 		Set<ConstraintViolation<Vehiculo>> constraintViolations = v.validate(vh);  

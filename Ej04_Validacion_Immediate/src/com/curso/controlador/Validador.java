@@ -11,10 +11,15 @@ import javax.validation.Validator;
 
 public class Validador {
 
+	private static Validator validador;
+	
+	static {
+		validador = Validation.buildDefaultValidatorFactory().getValidator();
+	}
+	
 	public static boolean validar(Object obj, FacesContext fCtx, String formulario){
 		
 		boolean ok = true;
-		Validator validador = Validation.buildDefaultValidatorFactory().getValidator();
 		
 		Set<ConstraintViolation<Object>> constraintViolations = validador.validate(obj);  
 		for(ConstraintViolation<Object> constraintViolation : constraintViolations){

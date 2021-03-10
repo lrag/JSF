@@ -37,6 +37,7 @@ public class ClientesBB implements Serializable {
 		System.out.println("Insertando el cliente:" + cliente.getNombre());
 		listaClientes.add(cliente);
 		System.out.println(listaClientes);
+		//Si no devolvemos null JSF lo interpreta como una navegación y el view scope se reinicia (WTF)
 		//return "formulario.xhtml";
 		return null;
 	}

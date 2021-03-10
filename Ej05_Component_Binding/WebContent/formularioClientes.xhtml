@@ -21,7 +21,7 @@
 			<div class="text-center">
 				<h:commandButton value="Insertar"    class="btn btn-primary mr-2" action="#{clientesBB.insertarCliente}" />
 				<h:commandButton value="Vaciar"      class="btn btn-primary mr-2" action="#{clientesBB.vaciarCliente}"/>
-				<h:commandButton value="Otra Pagina" class="btn btn-primary"      action="otraPagina" immediate="true"/>
+				<h:commandButton value="Cancelar"    class="btn btn-primary"      action="listadoClientes" immediate="true"/>
 			</div>	
 			
 			<div class="row">		
@@ -72,7 +72,7 @@
 
 			<br/>
 			
-			<h:panelGroup id="panel" binding="#{clientesBB.panel}">
+			<h:panelGroup id="panel" binding="#{clientesBB.panel}"> 
 
 				<div class="row">		
 			
